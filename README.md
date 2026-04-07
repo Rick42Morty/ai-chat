@@ -41,9 +41,10 @@ npm install
 ### 2. Set up Supabase
 
 1. Create a project at [supabase.com](https://supabase.com)
-2. Go to **SQL Editor** and run the migration:
+2. Go to **SQL Editor** and run the migrations **in order**:
    ```
    supabase/migrations/001_init.sql
+   supabase/migrations/002_rls.sql
    ```
 3. Go to **Authentication → Configuration** and set **JWT expiry** to `604800` (7 days) so sessions last as long as the auth cookie.
 5. Grab your keys from **Project Settings → API Keys**:
