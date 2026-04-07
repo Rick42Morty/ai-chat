@@ -5,6 +5,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* App default body/UI size: 16px (many components use text-sm) */
+  --text-sm: 1rem;
+  --text-sm--line-height: calc(1.5 / 1);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
@@ -121,10 +125,98 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
   html {
-    @apply font-sans;
+    @apply font-sans text-base;
+    font-size: 16px;
   }
+
+  body {
+    @apply bg-background text-foreground text-base;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes thinking {
+  0%,
+  80%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Shimmer for loading placeholders (chat + sidebar) */
+.skeleton-line,
+.skeleton-avatar {
+  @apply relative overflow-hidden bg-muted;
+}
+.skeleton-line::after,
+.skeleton-avatar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    oklch(0.5 0 0 / 7%) 45%,
+    oklch(0.5 0 0 / 7%) 55%,
+    transparent 100%
+  );
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+.dark .skeleton-line::after,
+.dark .skeleton-avatar::after {
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    oklch(1 0 0 / 6%) 45%,
+    oklch(1 0 0 / 6%) 55%,
+    transparent 100%
+  );
+}
+@keyframes skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-line::after,
+  .skeleton-avatar::after {
+    animation: none;
+  }
+}
+
+/* Sonner: ensure centered column doesn’t clip shadows */
+[data-sonner-toaster] {
+  z-index: 100;
+}
+
+/* Sonner close: library uses top:0 + translate(35%,-35%) which sits off-corner; pin to vertical center, flush right */
+[data-sonner-toast][data-styled="true"] [data-close-button] {
+  top: 50% !important;
+  left: auto !important;
+  right: 0.5rem !important;
+  transform: translateY(-50%) !important;
+}
+
+[data-rich-colors="true"][data-sonner-toast] [data-close-button] {
+  top: 50% !important;
+  left: auto !important;
+  right: 0.5rem !important;
+  transform: translateY(-50%) !important;
 }
