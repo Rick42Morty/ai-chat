@@ -31,7 +31,7 @@ export function AppToaster() {
         duration: 4200,
         classNames: {
           toast:
-            "group toast !w-[min(calc(100vw-2rem),22rem)] !rounded-xl !border !border-border/70 !bg-background/90 !py-3 !pl-4 !pr-12 !shadow-lg !backdrop-blur-xl supports-[backdrop-filter]:!bg-background/75 dark:!border-border/60",
+            "group toast !w-[min(calc(100vw-2rem-env(safe-area-inset-left)-env(safe-area-inset-right)),22rem)] !rounded-xl !border !border-border/70 !bg-background/90 !py-3 !pl-4 !pr-10 !shadow-lg !backdrop-blur-xl supports-[backdrop-filter]:!bg-background/75 dark:!border-border/60",
           title: "!text-sm !font-semibold !leading-snug !pr-0 !text-foreground",
           description:
             "!text-sm !leading-relaxed !text-muted-foreground !mt-0.5 !pr-0",
@@ -46,7 +46,7 @@ export function AppToaster() {
           info: "!border-sky-500/25",
         },
       }}
-      className="!left-1/2 !right-auto !w-auto !max-w-none !-translate-x-1/2 !px-3 sm:!px-4"
+      className="!left-1/2 !right-auto !w-auto !max-w-none !-translate-x-1/2 !px-[max(0.75rem,env(safe-area-inset-left))] sm:!px-4"
     />
   );
 }

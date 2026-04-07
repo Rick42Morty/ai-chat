@@ -88,6 +88,7 @@ export function ChatView({ chatId }: Props) {
     onFinish: () => {
       queryClient.invalidateQueries({ queryKey: ["chats"] });
       queryClient.invalidateQueries({ queryKey: ["chat-messages", chatId] });
+      queryClient.invalidateQueries({ queryKey: ["anon-session"] });
     },
   });
 
