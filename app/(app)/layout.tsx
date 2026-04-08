@@ -74,7 +74,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             {isAnonymous && (
               <Link
                 href="/login"
-                className="rounded-md px-2 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                className="rounded-md px-2 py-1 text-base font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
               >
                 Sign in
               </Link>

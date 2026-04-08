@@ -36,8 +36,8 @@ export function AppToaster() {
           description:
             "!text-sm !leading-relaxed !text-muted-foreground !mt-0.5 !pr-0",
           actionButton:
-            "!ml-2 !shrink-0 !rounded-lg !bg-primary !px-3 !py-1.5 !text-xs !font-medium !text-primary-foreground !transition-opacity hover:!opacity-90",
-          cancelButton: "!rounded-lg !text-xs",
+            "!ml-2 !shrink-0 !rounded-lg !bg-primary !px-3 !py-1.5 !text-sm !font-medium !text-primary-foreground !transition-opacity hover:!opacity-90",
+          cancelButton: "!rounded-lg !text-sm",
           closeButton:
             "!flex !h-8 !w-8 !items-center !justify-center !border-0 !bg-transparent !p-0 !text-muted-foreground !opacity-90 !transition-opacity hover:!bg-muted/80 hover:!opacity-100 [&_svg]:!block [&_svg]:!shrink-0",
           success: "!border-emerald-500/20 dark:!border-emerald-400/25",

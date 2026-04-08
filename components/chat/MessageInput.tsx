@@ -155,7 +155,7 @@ export function MessageInput({
                 <div
                   key={att.localId}
                   className={cn(
-                    "flex items-center gap-1.5 rounded-full border bg-muted/80 py-1 pl-1 pr-2.5 text-xs shadow-sm transition-[border-color,background-color,opacity] duration-200",
+                    "flex items-center gap-1.5 rounded-full border bg-muted/80 py-1 pl-1 pr-2.5 text-sm shadow-sm transition-[border-color,background-color,opacity] duration-200",
                     att.error
                       ? "border-destructive text-destructive"
                       : att.uploading
@@ -283,7 +283,7 @@ export function MessageInput({
           )}
         </div>
 
-        <p className="mt-1.5 text-center text-xs text-muted-foreground">
+        <p className="mt-1.5 text-center text-sm text-muted-foreground">
           AI can make mistakes. Press Enter to send, Shift+Enter for new line.
         </p>
       </div>

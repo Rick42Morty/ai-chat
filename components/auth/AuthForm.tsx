@@ -145,7 +145,7 @@ export function AuthForm({ mode }: Props) {
         </p>
 
         {mode === "login" && (
-          <p className="text-center text-xs text-muted-foreground">
+          <p className="text-center text-sm text-muted-foreground">
             Or{" "}
             <Link href="/chat" className="underline underline-offset-4">
               continue as guest

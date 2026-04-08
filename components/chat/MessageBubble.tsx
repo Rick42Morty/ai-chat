@@ -97,7 +97,7 @@ export function MessageBubble({ message, isStreaming }: Props) {
             {docParts.map((doc) => (
               <div
                 key={doc.document_id}
-                className="flex items-center gap-1.5 rounded-lg border border-border/60 bg-muted/60 px-2.5 py-1 text-xs text-muted-foreground"
+                className="flex items-center gap-1.5 rounded-lg border border-border/60 bg-muted/60 px-2.5 py-1 text-sm text-muted-foreground"
               >
                 <FileText className="h-3.5 w-3.5 shrink-0" />
                 <span className="max-w-48 truncate">{doc.name}</span>

@@ -95,11 +95,11 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
             ))}
           </motion.div>
         ) : isError ? (
-          <p className="px-3 py-4 text-xs text-destructive">
+          <p className="px-3 py-4 text-sm text-destructive">
             Could not load conversations
           </p>
         ) : (data?.chats ?? []).length === 0 ? (
-          <p className="px-3 py-4 text-xs text-muted-foreground leading-relaxed">
+          <p className="px-3 py-4 text-sm text-muted-foreground leading-relaxed">
             No conversations yet
           </p>
         ) : (
@@ -116,7 +116,7 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
               <Button
                 variant="ghost"
                 size="sm"
-                className="w-full text-xs text-muted-foreground"
+                className="w-full text-sm text-muted-foreground"
                 onClick={() => fetchNextPage()}
                 disabled={isFetchingNextPage}
               >
@@ -133,12 +133,12 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
         {user ? (
           <div className="flex items-center gap-2">
             <Avatar className="h-7 w-7 ring-1 ring-border/40">
-              <AvatarFallback className="text-xs">
+              <AvatarFallback className="text-sm">
                 {(user.display_name ?? user.email)[0].toUpperCase()}
               </AvatarFallback>
             </Avatar>
             <div className="flex-1 min-w-0">
-              <p className="truncate text-xs font-medium">
+              <p className="truncate text-base font-medium">
                 {user.display_name ?? user.email}
               </p>
             </div>

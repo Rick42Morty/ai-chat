@@ -42,7 +42,7 @@ export function AnonymousBanner() {
       </div>
       <Link
         href="/signup"
-        className="inline-flex h-7 shrink-0 items-center rounded-lg border border-border/80 bg-background/90 px-2.5 text-xs font-medium shadow-sm transition-[background-color,box-shadow,transform] duration-200 hover:bg-muted hover:shadow active:scale-[0.98]"
+        className="inline-flex h-7 shrink-0 items-center rounded-lg border border-border/80 bg-background/90 px-2.5 text-base font-medium shadow-sm transition-[background-color,box-shadow,transform] duration-200 hover:bg-muted hover:shadow active:scale-[0.98]"
       >
         Sign up free
       </Link>
